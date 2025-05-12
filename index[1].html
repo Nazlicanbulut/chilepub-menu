@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chile Pub Menü</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #222;
+      padding: 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: #333;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    nav button:hover {
+      background-color: #444;
+    }
+    section {
+      display: none;
+      padding: 1rem;
+    }
+    section.active {
+      display: block;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .item {
+      margin-bottom: 1rem;
+    }
+    .item-name {
+      font-weight: bold;
+    }
+    .item-price {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <header>Chile Pub Menü</header>
+
+  <nav>
+    <button onclick="showSection('biralar')">Biralar</button>
+    <button onclick="showSection('kokteyller')">Kokteyller</button>
+    <button onclick="showSection('yiyecekler')">Yiyecekler</button>
+    <button onclick="showSection('sicak')">Sıcak & Soft</button>
+  </nav>
+
+  <section id="biralar" class="active">
+    <div class="item"><span class="item-name">Tuborg 50cl</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Carlsberg 50cl</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Bomonti 50cl</span> <span class="item-price">₺</span></div>
+  </section>
+
+  <section id="kokteyller">
+    <div class="item"><span class="item-name">Mojito</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Margarita</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Long Island</span> <span class="item-price">₺</span></div>
+  </section>
+
+  <section id="yiyecekler">
+    <div class="item"><span class="item-name">Çıtır Tavuk</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Club Sandwich</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Fettucini Alfredo</span> <span class="item-price">₺</span></div>
+  </section>
+
+  <section id="sicak">
+    <div class="item"><span class="item-name">Filtre Kahve</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Latte</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Kola</span> <span class="item-price">₺</span></div>
+    <div class="item"><span class="item-name">Red Bull</span> <span class="item-price">₺</span></div>
+  </section>
+
+  <script>
+    function showSection(id) {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(s => s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
